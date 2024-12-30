@@ -6,7 +6,7 @@
 - Done!
 
 ## Example Script:
-```
+```lua
 local webhookService = require(script.Parent.DiscordWebhook)
 local webhook = webhookService.Webhook.new("YOUR WEBHOOK URL HERE")
 webhook:SendEmbed("Roblox Embed", "This embed message is from a Roblox game", "https://roblox.com", webhookService.Utils.rgbToColor(200, 0, 200), {
