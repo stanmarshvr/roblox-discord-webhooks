@@ -64,7 +64,7 @@ function module.Webhook:SendEmbed(title: string, description: string, url: strin
 		["description"] = description or "From Roblox",
 		["url"] = url or "https://www.roblox.com",
 		["color"] = color or 16716820,
-		["fields"] = fields
+		["fields"] = fields or {}
 		}}
 	}
 	local encodedBody = HttpService:JSONEncode(embedTable)
