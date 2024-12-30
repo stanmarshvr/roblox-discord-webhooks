@@ -30,6 +30,8 @@ webhook:SendEmbed("Roblox Embed", "This embed message is from a Roblox game", "h
 webhook:SendMessage("Hello", "Life is Roblox")
 ```
 
+# Documentation
+
 ## module.Webhook
 ### Functions: 
 - .new(url: string) *The constructor, makes a new Webhook instance with the provided URL if it is valid*
