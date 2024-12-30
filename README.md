@@ -2,14 +2,32 @@
 
 ## Usage:
 - Copy the contents of `DiscordWebhooks` and paste it into a new ModuleScript in Roblox Studio. I recommend putting it in ServerStorage or ServerScriptService.
-- Create a new ModuleScript under the first one you made, and name it "Config". Paste the contents of `DiscordWebhooks.Config` into it.
+- Create a new ModuleScript under the first one you made, and name it "Config". Paste the contents of `DiscordWebhooks.Config` into it. *If you want to see logs from Webhook instances in the console, set `Debug` to true
 - Done!
 
 ## Example Script:
 ```
-local DiscordWebhooks = require(game.ServerScriptService.DiscordWebhooks)
-local Webhook = DiscordWebhooks.new("https://discord.com/api/webhooks/yourwebhook")
-Webhook:SendMessage("Hello from Roblox!", "Roblox Webhook")
+local webhookService = require(script.Parent.DiscordWebhook)
+local webhook = webhookService.Webhook.new("YOUR WEBHOOK URL HERE")
+webhook:SendEmbed("Roblox Embed", "This embed message is from a Roblox game", "https://roblox.com", webhookService.Utils.rgbToColor(200, 0, 200), {
+	{
+		["name"] = "Field 1",
+		["value"] = "This is a field.",
+		["inline"] = false
+	},
+	{
+		["name"] = "Field 2",
+		["value"] = "This is another field.",
+		["inline"] = false
+	},
+	{
+		["name"] = "Field 3",
+		["value"] = "This is the third field.",
+		["inline"] = false
+	}
+})
+
+webhook:SendMessage("Hello", "Life is Roblox")
 ```
 
 ## module.Webhook
